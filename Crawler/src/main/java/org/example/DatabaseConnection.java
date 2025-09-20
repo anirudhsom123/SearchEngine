@@ -11,7 +11,7 @@ public class DatabaseConnection {
             return connection;
         }
         String user="root";
-        String pwd="root@123";
+        String pwd="";
         String db="searchengineapp";
         return getConnection(user,pwd,db);
     }
