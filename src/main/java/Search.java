@@ -24,11 +24,11 @@ public class Search extends HttpServlet {
             ResultSet resultSet = connection.createStatement().executeQuery("select pageTitle , pagelink , (length(lower(pageText))-length(replace(lower(pageText),'" + keyword.toLowerCase() + "','')))/length('" + keyword.toLowerCase() + "') as countoccurance from pages order by countoccurance desc limit 30;");
             ArrayList<SearchResult> results = new ArrayList<SearchResult>();
 
-            // Transferring values from resulset to result arraylist;
+            // Transferring values from resultset to result arraylist;
             while (resultSet.next()) {
                 SearchResult searchResult = new SearchResult();
                 searchResult.setTitle(resultSet.getString("pageTitle"));
-                searchResult.setTitle(resultSet.getString("pageLink"));
+                searchResult.setLink(resultSet.getString("pageLink"));
                 results.add(searchResult);
 
             }
