@@ -24,7 +24,7 @@ public class Search extends HttpServlet {
         Connection connection=DatabaseConnection.getConnection();
         try {
             //Store query of user
-            PreparedStatement preparedStatement=connection.prepareStatement("Insert into history(?,?);");
+            PreparedStatement preparedStatement=connection.prepareStatement("Insert into history values(?,?);");
             preparedStatement.setString(1,keyword);
             preparedStatement.setString(2,"http://localhost:8080/SearchEngine/Search?keyword="+keyword);
             preparedStatement.executeUpdate();
