@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -22,7 +23,11 @@ public class Search extends HttpServlet {
         // Setting up connection to database
         Connection connection=DatabaseConnection.getConnection();
         try {
-
+            //Store query of user
+            PreparedStatement preparedStatement=connection.prepareStatement("Insert into history(?,?);");
+            preparedStatement.setString(1,keyword);
+            preparedStatement.setString(2,"http://localhost:8080/SearchEngine/Search?keyword="+keyword);
+            preparedStatement.executeUpdate();
             // getting results after running the ranking query
             ResultSet resultSet = connection.createStatement().executeQuery("select pageTitle , pagelink , (length(lower(pageText))-length(replace(lower(pageText),'" + keyword.toLowerCase() + "','')))/length('" + keyword.toLowerCase() + "') as countoccurance from pages order by countoccurance desc limit 30;");
             ArrayList<SearchResult> results = new ArrayList<SearchResult>();
