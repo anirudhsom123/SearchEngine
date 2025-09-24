@@ -1,0 +1,86 @@
+/* Global styles for a light, clean theme */
+body {
+    background-color: #f0f4f8; /* Very light gray background */
+    color: #1f2937; /* Dark gray text for contrast */
+    font-family: 'Inter', sans-serif;
+    text-align: center; /* Center the content as requested */
+    margin: 0;
+    padding: 2rem;
+}
+
+/* Style for the search input field */
+input[type="text"] {
+    width: 30%;
+    min-width: 250px; /* Ensure input is not too small on mobile */
+    max-width: 500px;
+    padding: 12px 20px;
+    border: 2px solid #cbd5e1; /* Light neutral border color */
+    border-radius: 9999px; /* Fully rounded corners */
+    background-color: #ffffff; /* White background for the input */
+    color: #1f2937;
+    transition: all 0.3s ease-in-out;
+}
+
+input[type="text"]:focus {
+    outline: none;
+    border-color: #3b82f6; /* A pleasing blue accent on focus */
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.4);
+}
+
+/* Style for the buttons */
+button {
+    background-color: #3b82f6; /* A clean blue */
+    color: white;
+    border: none;
+    border-radius: 9999px; /* Fully rounded corners */
+    padding: 12px 24px;
+    margin: 8px 4px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+button:hover {
+    background-color: #2563eb; /* Darken on hover */
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Style for the search results table container */
+.resultTable {
+    display: inline-block;
+    background: #ffffff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+    margin-top: 2rem;
+}
+
+/* Style for the table itself */
+.resultTable table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+/* Style for table headers */
+.resultTable th {
+    background-color: #e2e8f0;
+    color: #4b5563;
+    padding: 12px 20px;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    border-bottom: 2px solid #cbd5e1;
+}
+
+/* Style for table rows */
+.resultTable td {
+    padding: 12px 20px;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+/* Style for the last row to remove border */
+.resultTable tr:last-child td {
+    border-bottom: none;
+}

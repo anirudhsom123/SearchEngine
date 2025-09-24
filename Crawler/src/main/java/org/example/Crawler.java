@@ -17,7 +17,10 @@ public class Crawler {
     }
     public void getPageTextAndLinks(String url, int depth) {
         if(urlSet.contains(url)) return;
-        if(depth>MAX_DEPTH) return;
+        if(depth>=MAX_DEPTH) return;
+        if(urlSet.add(url)){
+            System.out.println(url);
+        }
         depth++;
 
         try{
@@ -41,6 +44,6 @@ public class Crawler {
     }
     public static void main(String[] args){
       Crawler crawler=new Crawler();
-      crawler.getPageTextAndLinks("https://www.tpointtech.com/",1);
+      crawler.getPageTextAndLinks("https://www.tpointtech.com",0);
     }
 }
