@@ -1,3 +1,6 @@
+package com.classes;
+
+import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -37,11 +40,15 @@ public class Search extends HttpServlet {
             for(SearchResult result : results){
                 System.out.println(result.getTitle()+"\n"+result.getLink());
             }
+            request.setAttribute("results",results);
+            request.getRequestDispatcher("search.jsp").forward(request,response);
 
             response.setContentType("text/html");
             PrintWriter out = response.getWriter();
         }catch(SQLException sqlException){
             sqlException.printStackTrace();
+        } catch(ServletException servletException){
+            servletException.printStackTrace();
         }
     }
 }

@@ -1,3 +1,5 @@
+package com.classes;
+
 public class SearchResult {
     String title;
     String link;
