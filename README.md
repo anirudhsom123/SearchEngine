@@ -58,9 +58,9 @@ Visual aids for the project, demonstrating the interface and key functionality.
 
 | Search Interface | Search Results Page |
 | :---: | :---: |
-| ![Screenshot of the main search page/input field](screenshots/searchBar.png) | ![Screenshot of search results list with ranking](screenshots/results_page.png) |
+| ![Screenshot of the main search page/input field](screenshots/searchBar.png) | ![Screenshot of search results list with ranking](screenshots/searchresult.png) |
 | **Indexing Console Output** | **Project Dashboard/Stats** |
-| ![Screenshot of the crawler/indexer running in the terminal](screenshots/indexing_console.png) | ![Screenshot of the project's statistics or about page](screenshots/statistics.png) |
+| ![Screenshot of the history](screenshots/history.png) |
 
 ***
 *Note: Ensure the image file names in the markdown above exactly match the files in your `screenshots/` directory.*
